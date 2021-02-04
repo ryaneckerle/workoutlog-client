@@ -30,6 +30,7 @@ const Signup = (props) => {
             onChange={(e) => setUsername(e.target.value)}
             name="username"
             value={username}
+            required
           />
         </FormGroup>
         <FormGroup>

@@ -28,6 +28,7 @@ const WorkoutCreate = (props) => {
         setDescription('');
         setDefinition('');
         setResult('');
+        props.fetchWorkouts();
       });
   };
 
@@ -36,7 +37,7 @@ const WorkoutCreate = (props) => {
       <h3>Log a Workout</h3>
       <Form onSubmit={handleSubmit}>
         <FormGroup>
-          <Label htmlFor="description" />
+          <Label htmlFor="description">Description:</Label>
           <Input
             name="description"
             value={description}
@@ -44,20 +45,21 @@ const WorkoutCreate = (props) => {
           />
         </FormGroup>
         <FormGroup>
-          <Label htmlFor="definition" />
+          <Label htmlFor="select">Definition:</Label>
           <Input
             type="select"
             name="definition"
             value={definition}
             onChange={(e) => setDefinition(e.target.value)}
           >
+            <option value=" "></option>
             <option value="Time">Time</option>
             <option value="Weight">Weight</option>
             <option value="Distance">Distance</option>
           </Input>
         </FormGroup>
         <FormGroup>
-          <Label htmlFor="result" />
+          <Label htmlFor="result">Result:</Label>
           <Input
             name="result"
             value={result}

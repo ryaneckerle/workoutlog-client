@@ -43,14 +43,6 @@ const WorkoutEdit = (props) => {
         <ModalBody>
           <Form onSubmit={workoutUpdate}>
             <FormGroup>
-              <Label htmlFor="result">Edit Result:</Label>
-              <Input
-                name="result"
-                value={editRes}
-                onChange={(e) => setEditRes(e.target.value)}
-              />
-            </FormGroup>
-            <FormGroup>
               <Label htmlFor="description">Edit Description:</Label>
               <Input
                 name="description"
@@ -64,12 +56,21 @@ const WorkoutEdit = (props) => {
                 type="select"
                 name="definition"
                 value={editDef}
+                placeholder="select-one"
                 onChange={(e) => setEditDef(e.target.value)}
               >
                 <option value="Time">Time</option>
                 <option value="Weight">Weight</option>
                 <option value="Distance">Distance</option>
               </Input>
+            </FormGroup>
+            <FormGroup>
+              <Label htmlFor="result">Edit Result:</Label>
+              <Input
+                name="result"
+                value={editRes}
+                onChange={(e) => setEditRes(e.target.value)}
+              />
             </FormGroup>
             <Button type="submit">Update the workout!</Button>
           </Form>
